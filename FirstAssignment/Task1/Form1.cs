@@ -14,25 +14,21 @@ namespace MyWinFormsApp
         {
             InitializeComponent();
 
-            // Создание кнопки
             button1 = new Button();
             button1.Text = "Press";
             button1.Location = new System.Drawing.Point(30, 30);
             button1.Click += new EventHandler(Button1_Click);
 
-            // Создание метки
             label2 = new Label();
             label2.Text = "I AM NOT FINE.";
             label2.Location = new System.Drawing.Point(30, 70);
 
-            // Создание PictureBox
             pictureBox2 = new PictureBox();
             pictureBox2.Location = new System.Drawing.Point(30, 110);
             pictureBox2.Size = new System.Drawing.Size(100, 100);
             pictureBox2.BackColor = Color.Blue;
             pictureBox2.Visible = false;
 
-            // Добавление элементов управления на форму
             this.Controls.Add(button1);
             this.Controls.Add(label2);
             this.Controls.Add(pictureBox2);
@@ -42,7 +38,7 @@ namespace MyWinFormsApp
         {
             MessageBox.Show("The button is pressed");
             label2.Text = "I AM FINE";
-            pictureBox2.Visible = !pictureBox2.Visible;  // Переключение видимости PictureBox
+            pictureBox2.Visible = !pictureBox2.Visible;  
         }
 
         protected override void OnFormClosed(FormClosedEventArgs e)

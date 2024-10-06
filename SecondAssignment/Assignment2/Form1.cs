@@ -33,7 +33,6 @@ namespace Assignment2
             textBoxClassB = new TextBox { Location = new System.Drawing.Point(20, 80), Width = 100 };
             textBoxClassC = new TextBox { Location = new System.Drawing.Point(20, 130), Width = 100 };
 
-            // Create and configure Buttons
             buttonCalculate = new Button { Text = "Calculate", Location = new System.Drawing.Point(20, 180) };
             buttonCalculate.Click += new EventHandler(buttonCalculate_Click);
 
@@ -43,13 +42,11 @@ namespace Assignment2
             buttonExit = new Button { Text = "Exit", Location = new System.Drawing.Point(280, 180) };
             buttonExit.Click += new EventHandler(buttonExit_Click);
 
-            // Create and configure Labels for displaying revenue
             labelRevenueA = new Label { Location = new System.Drawing.Point(20, 220), Width = 200 };
             labelRevenueB = new Label { Location = new System.Drawing.Point(20, 250), Width = 200 };
             labelRevenueC = new Label { Location = new System.Drawing.Point(20, 280), Width = 200 };
             labelTotalRevenue = new Label { Location = new System.Drawing.Point(20, 310), Width = 200 };
 
-            // Add controls to the form
             this.Controls.Add(textBoxClassA);
             this.Controls.Add(textBoxClassB);
             this.Controls.Add(textBoxClassC);
@@ -61,7 +58,6 @@ namespace Assignment2
             this.Controls.Add(labelRevenueC);
             this.Controls.Add(labelTotalRevenue);
 
-            // Set the size of the form
             this.ClientSize = new System.Drawing.Size(400, 350);
             this.Text = "Ticket Sales Revenue";
         }
@@ -78,18 +74,16 @@ namespace Assignment2
             int classBTickets = GetTicketCount(textBoxClassB.Text);
             int classCTickets = GetTicketCount(textBoxClassC.Text);
 
-            // Calculate revenues
             double revenueA = ClassAPrice * classATickets;
             double revenueB = ClassBPrice * classBTickets;
             double revenueC = ClassCPrice * classCTickets;
 
-            // Update labels with calculated values
             UpdateRevenueLabels(revenueA, revenueB, revenueC);
         }
 
         private int GetTicketCount(string input)
         {
-            // Return zero if parsing fails
+
             return int.TryParse(input, out int count) ? count : 0;
         }
 
